@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Paswan - Data Scientist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .section-title {
+            color: #58a6ff;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(88, 166, 255, 0.2);
+        }
+        .tag {
+            background-color: #30363d;
+            color: #58a6ff;
+        }
+        .btn-primary {
+            background-color: #238636;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #2ea043;
+        }
+        .btn-secondary {
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #58a6ff;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            height: 100%;
+            width: 2px;
+            background: #30363d;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: #0d1117;
+            border: 3px solid #58a6ff;
+        }
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .form-input {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+        }
+        .btn-submit {
+            background-color: #58a6ff;
+            color: #0d1117;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #80bfff;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-opacity-80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Abhishek Paswan</a>
+            <div class="hidden md:flex space-x-6 text-lg">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-800">About</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-800">Projects</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-800">Skills</a>
+            <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-800">Education</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section id="home" class="text-center min-h-[70vh] flex flex-col justify-center items-center reveal">
+            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">Abhishek Paswan</h1>
+            <p class="text-xl md:text-2xl section-title font-medium mb-8">MCA in Data Science Student | Turning Data into Actionable Insights</p>
+            <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-10">
+                 A passionate data science student with a knack for transforming complex datasets into compelling stories and actionable business solutions.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="btn-primary font-semibold py-3 px-6 rounded-lg text-lg">View My Work</a>
+                <a href="D:\website\Abhishek Paswan Resume.pdf" download class="btn-secondary font-semibold py-3 px-6 rounded-lg text-lg">Download Resume</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-10">
+                <a href="https://github.com/abhishekspaswan" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/abhishek-paswan-461431285" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:abhishekkumarpaswan923@gmail.com" class="text-gray-400 hover:text-white transition duration-300"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">About Me</h2>
+            <div class="max-w-4xl mx-auto text-lg text-center leading-relaxed">
+                <p>I am a Master of Computer Applications student specializing in Data Science at Sri Balaji University, Pune. I've built a solid foundation in programming, data analysis, machine learning, and business intelligence. I am passionate about leveraging data to uncover insights, build predictive models, and create compelling visualizations. My goal is to apply my skills in a challenging environment where I can contribute to meaningful projects and continue to grow as a data professional.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Academic Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                 <!-- Project -->
+                 <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">CNN Brain Tumor Detection</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Utilizes Convolutional Neural Networks (CNNs) to detect and classify brain tumors from medical imaging data, showcasing deep learning skills.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">TensorFlow</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Keras</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">CNN</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/CNN-Brain-Tumor-Detection" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">End-to-End Stock Forecasting App</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">A complete stock price forecasting application with a graphical user interface, featuring model training and real-time prediction.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Streamlit</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">GUI</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">ML</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/Stock-Price-Forecasting-End-to-End-App-with-GUI-" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">Liquor Store Sales Analysis</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">An exploratory data analysis (EDA) project on liquor store sales data to uncover trends, top-selling products, and sales patterns.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Pandas</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">EDA</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Jupyter</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/Liquor-Store-Sales" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">Social Media Sentiment Analysis</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">A project to perform sentiment analysis on social media data, classifying posts as positive, negative, or neutral using NLP techniques.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">NLP</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Pandas</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/Social-Media-Sentiment-Analysis" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">Power BI Sales Dashboards</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">A collection of interactive dashboards built with Power BI to visualize sales data, track KPIs, and provide business insights.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Power BI</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">DAX</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">BI</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/Power-bi" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">Automated Book Publication Workflow</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">A project to automate the workflow of book publication, streamlining processes from manuscript to final output.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Automation</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Scripting</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/project-Automated-Book-Publication-Workflow" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project -->
+                 <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">Fishious Android App</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">An e-commerce Android application for selling fish, developed natively using Java and Android Studio with a MySQL backend.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Java</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Android Studio</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">MySQL</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/Fishious-andriod-app" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project -->
+                <div class="card rounded-lg p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-3">City Guide Porbandar Website</h3>
+                    <p class="text-gray-400 mb-4 flex-grow">Built a local directory website to connect users with various services. Created a dynamic UI using CSS, Bootstrap, and JavaScript.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">J2EE</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">JSP</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">MySQL</span>
+                        <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Bootstrap</span>
+                    </div>
+                    <div class="mt-auto">
+                        <a href="https://github.com/abhishekspaswan/City-Guide-Porbandar-WEBSITE-" target="_blank" class="btn-secondary font-semibold py-2 px-4 rounded-lg inline-flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Technical Skills</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
+                    <div class="skill-item p-4"><i class="fab fa-python fa-2x mb-2 text-blue-400"></i><p>Python</p></div>
+                    <div class="skill-item p-4"><i class="fab fa-java fa-2x mb-2 text-blue-400"></i><p>Java</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-database fa-2x mb-2 text-blue-400"></i><p>SQL</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-table fa-2x mb-2 text-blue-400"></i><p>Pandas</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-calculator fa-2x mb-2 text-blue-400"></i><p>NumPy</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-chart-pie fa-2x mb-2 text-blue-400"></i><p>Google Data Studio</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-chart-line fa-2x mb-2 text-blue-400"></i><p>Power BI</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-paint-brush fa-2x mb-2 text-blue-400"></i><p>Matplotlib</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-brain fa-2x mb-2 text-blue-400"></i><p>Scikit-learn</p></div>
+                    <div class="skill-item p-4"><i class="fas fa-robot fa-2x mb-2 text-blue-400"></i><p>TensorFlow</p></div>
+                    <div class="skill-item p-4"><i class="fab fa-html5 fa-2x mb-2 text-blue-400"></i><p>HTML</p></div>
+                    <div class="skill-item p-4"><i class="fab fa-css3-alt fa-2x mb-2 text-blue-400"></i><p>CSS</p></div>
+                </div>
+            </div>
+        </section>
+        
+       <!-- Education & Achievements Section -->
+        <section id="education" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Education & Achievements</h2>
+            <div class="max-w-4xl mx-auto relative timeline pl-8">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <h3 class="text-xl font-bold text-white">Master of Computer Application (MCA), Data Science</h3>
+                    <p class="text-md text-gray-400">Sri Balaji University, Pune (SBUP) | Pursuing</p>
+                    <p class="text-lg font-medium text-blue-400">CGPA: 8.75</p>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <h3 class="text-xl font-bold text-white">Bachelor of Computer Application (BCA)</h3>
+                    <p class="text-md text-gray-400">Dr. Virambhai R. Godhaniya I.T College, Porbandar | 2021-2024</p>
+                    <p class="text-lg font-medium text-blue-400">CGPA: 8.67</p>
+                </div>
+                 <!-- Timeline Item 3 -->
+                <div class="timeline-item relative pl-8 pb-8">
+                    <h3 class="text-xl font-bold text-white">HSC (Commerce) - 12th Grade</h3>
+                    <p class="text-md text-gray-400">Sandipani Gurukul School, Porbandar | 2019-2021</p>
+                    <p class="text-lg font-medium text-blue-400">Percentage: 57.42%</p>
+                </div>
+                 <!-- Timeline Item 4 -->
+                 <div class="timeline-item relative pl-8 pb-8">
+                    <h3 class="text-xl font-bold text-white">SSC - 10th Grade</h3>
+                    <p class="text-md text-gray-400">Saint Joseph High School, Porbandar | 2018-2019</p>
+                    <p class="text-lg font-medium text-blue-400">Percentage: 64.5%</p>
+                </div>
+                 <!-- Timeline Item 5 -->
+                 <div class="timeline-item relative pl-8 pb-8">
+                    <h3 class="text-xl font-bold text-white">Achievements</h3>
+                    <ul class="list-disc list-inside text-gray-400 mt-2">
+                        <li>1st Place in Code Fusion (Tecno Tuner Club, SBUP)</li>
+                        <li>Research paper accepted for ISBM 2025 Conference, Bangkok</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Certifications</h2>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-certificate fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Python</h3>
+                    <p class="text-gray-400">Coursera</p>
+                </div>
+                <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-warehouse fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Data Warehousing</h3>
+                    <p class="text-gray-400">LinkedIn</p>
+                </div>
+                <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-chart-line fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Power BI</h3>
+                    <p class="text-gray-400">LinkedIn</p>
+                </div>
+                <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-atom fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Data Science Foundation</h3>
+                    <p class="text-gray-400">LinkedIn</p>
+                </div>
+                 <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-brain fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Machine Learning</h3>
+                    <p class="text-gray-400">LinkedIn</p>
+                </div>
+                <div class="card rounded-lg p-6 text-center">
+                    <i class="fas fa-code fa-2x text-blue-400 mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Full Stack Web Development</h3>
+                    <p class="text-gray-400">Apna College</p>
+                </div>
+            </div>
+        </section>
+
+     <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center reveal">
+             <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4 text-white">Contact Me</h2>
+                <p class="text-lg text-gray-400 mb-8">
+                    Have a question or want to work together? Leave a message below.
+                </p>
+                <div class="card p-8 rounded-lg">
+                    
+                    <form id="contact-form" action="https://formspree.io/f/meolkjry" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <input type="text" name="firstName" placeholder="First Name" class="form-input w-full px-4 py-3 rounded-md" required>
+                            <input type="text" name="lastName" placeholder="Last Name" class="form-input w-full px-4 py-3 rounded-md" required>
+                        </div>
+                        <div class="mb-6">
+                             <input type="email" name="email" placeholder="Email" class="form-input w-full px-4 py-3 rounded-md" required>
+                        </div>
+                        <div class="mb-6">
+                            <textarea name="message" placeholder="Your Message" rows="5" class="form-input w-full px-4 py-3 rounded-md" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit w-full py-3 rounded-md text-lg">Send Message</button>
+                    </form>
+                    <p class="text-gray-500 mt-6 text-sm">
+                        Or, contact me directly: <br>
+                        <a href="mailto:abhishekkumarpaswan923@gmail.com" class="underline hover:text-blue-400">abhishekkumarpaswan923@gmail.com</a>
+                        <br>
+                        <a href="tel:+918238047216" class="underline hover:text-blue-400">+91 8238047216</a>
+                    </p>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
+        <div class="card max-w-sm w-full p-8 rounded-lg text-center">
+            <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
+            <h3 class="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+            <p class="text-gray-400 mb-6">Thank you for reaching out. I'll get back to you shortly.</p>
+            <button id="close-modal-btn" class="btn-primary py-2 px-6 rounded-lg">Close</button>
+        </div>
+    </div>
+
+
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2024 Abhishek Paswan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll reveal animation
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', reveal);
+        // Initial check
+        reveal();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact Form Submission with Success Modal
+        const contactForm = document.getElementById('contact-form');
+        const successModal = document.getElementById('success-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const formAction = this.action;
+
+                // Simple validation to ensure Formspree URL is set
+                if (formAction.includes('YOUR_UNIQUE_ID')) {
+                    alert('Please set up the form action URL in the HTML first.');
+                    return;
+                }
+
+                fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        successModal.classList.remove('hidden');
+                        contactForm.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert('Oops! There was a problem submitting your form.');
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    alert('Oops! There was a network error.');
+                });
+            });
+        }
+        
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                successModal.classList.add('hidden');
+            });
+        }
+       
+        if (successModal) {
+             // Also close if clicking outside the modal content
+            successModal.addEventListener('click', (e) => {
+                if (e.target === successModal) {
+                    successModal.classList.add('hidden');
+                }
+            });
+        }
+
+
+    </script>
+</body>
+</html>
